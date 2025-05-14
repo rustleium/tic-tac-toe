@@ -12,3 +12,10 @@ const Gameboard = (function () {
     showBoard,
   }
 })();
+
+function player(name, marker) {
+  return {
+    name,
+    marker,
+  }
+}
