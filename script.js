@@ -8,8 +8,14 @@ const Gameboard = (function () {
   function showBoard () {
     return board;
   }
+
+  function placeMark(row, column, marker) {
+    board[row][column] = marker;
+  }
+
   return {
     showBoard,
+    placeMark,
   }
 })();
 
