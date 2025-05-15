@@ -40,6 +40,7 @@ const GameController = (function() {
   const playerTwo = player("Player 2", "O");
 
   let currentPlayer = playerOne;
+  let isGameOver = false;
 
   function switchPlayer() {
     currentPlayer = currentPlayer === playerOne ? playerTwo : playerOne;
@@ -99,6 +100,37 @@ const GameController = (function() {
   function printBoard() {
     const board = Gameboard.showBoard();
     console.table(board);
+  }
+
+  function playRound(row, column) {
+    if (isGameOver) {
+      console.log("Game is over. Reset to play again.");
+      return;
+    }
+
+    const board = Gameboard.showBoard();
+
+    if (board[row][column] !== "") {
+      console.log("Cell already taken! Try another one.");
+      return;
+    }
+  
+    Gameboard.placeMark(row, column, currentPlayer.marker);
+    printBoard();
+
+    if (checkWinner(currentPlayer.marker)) {
+      console.log(`${currentPlayer.name} wins!`);
+      isGameOver = true;
+      return;
+    }
+
+    if (isDraw()) {
+      console.log("It's a draw!");
+      isGameOver = true;
+      return;
+    }
+
+    switchPlayer();
   }
 
   return {
