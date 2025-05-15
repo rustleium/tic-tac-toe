@@ -134,7 +134,7 @@ const GameController = (function() {
   }
 
   return {
-    switchPlayer,
+    playRound,
     resetGame,
   }
 })();
