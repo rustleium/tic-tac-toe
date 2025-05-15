@@ -40,4 +40,12 @@ const GameController = (function() {
   const playerTwo = player("Player 2", "O");
 
   let currentPlayer = playerOne;
+
+  function switchPlayer() {
+    currentPlayer = currentPlayer === playerOne ? playerTwo : playerOne;
+  }
+
+  return {
+    switchPlayer,
+  }
 })();
