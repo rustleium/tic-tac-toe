@@ -45,6 +45,40 @@ const GameController = (function() {
     currentPlayer = currentPlayer === playerOne ? playerTwo : playerOne;
   }
 
+  function checkWinner(marker) {
+    const board = Gameboard.showBoard();
+
+    // Columns and Rows
+    for (let i = 0; i < 3; i++) {
+      if (
+        board[i][0] === marker &&
+        board[i][1] === marker &&
+        board[i][2] === marker
+      ) return true;
+
+      if (
+        board[0][i] === marker &&
+        board[1][i] === marker &&
+        board[2][i] === marker
+      ) return true;
+    }
+
+    // Diagonals
+    if (
+      board[0][0] === marker &&
+      board[1][1] === marker &&
+      board[2][2] === marker 
+    ) return true;
+
+    if (
+      board[0][2] === marker &&
+      board[1][1] === marker &&
+      board[2][0] === marker
+    ) return true;
+
+    return false;
+  }
+
   return {
     switchPlayer,
   }
