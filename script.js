@@ -79,6 +79,16 @@ const GameController = (function() {
     return false;
   }
 
+  function isDraw() {
+    const board = Gameboard.showBoard();
+    for (let row of board) {
+      for (let cell of row) {
+        if (cell === "") return false;
+      }
+    }
+    return true;
+  }
+
   return {
     switchPlayer,
   }
