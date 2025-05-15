@@ -34,3 +34,10 @@ function player(name, marker) {
     marker,
   }
 }
+
+const GameController = (function() {
+  const playerOne = player("Player 1", "X");
+  const playerTwo = player("Player 2", "O");
+
+  let currentPlayer = playerOne;
+})();
