@@ -89,6 +89,13 @@ const GameController = (function() {
     return true;
   }
 
+  function resetGame() {
+    Gameboard.resetBoard();
+    currentPlayer = playerOne;
+    console.log("Game reset");
+    printBoard();
+  }
+
   function printBoard() {
     const board = Gameboard.showBoard();
     console.table(board);
@@ -96,5 +103,6 @@ const GameController = (function() {
 
   return {
     switchPlayer,
+    resetGame,
   }
 })();
