@@ -120,7 +120,7 @@ const GameController = (function() {
     printBoard();
 
     if (checkWinner(currentPlayer.marker)) {
-      console.log(`${currentPlayer.name} wins!`);
+      console.log(`%c${currentPlayer.name} (${currentPlayer.marker}) wins!`, 'color: yellow; font-weight: bold; font-size: 16px');
       isGameOver = true;
       return;
     }
