@@ -89,6 +89,11 @@ const GameController = (function() {
     return true;
   }
 
+  function printBoard() {
+    const board = Gameboard.showBoard();
+    console.table(board);
+  }
+
   return {
     switchPlayer,
   }
