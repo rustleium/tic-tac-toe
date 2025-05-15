@@ -44,6 +44,7 @@ const GameController = (function() {
 
   function switchPlayer() {
     currentPlayer = currentPlayer === playerOne ? playerTwo : playerOne;
+    console.log(`%c${currentPlayer.marker}'s turn`, 'color: cyan; font-weight: bold; font-size: 16px');
   }
 
   function checkWinner(marker) {
