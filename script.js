@@ -138,3 +138,7 @@ const GameController = (function() {
     resetGame,
   }
 })();
+
+console.log("%cTIC-TAC-TOE GAME", "font-weight: bold; font-size: 16px; color: yellow");
+console.log("▶️ To make a move, type: %cGameController.playRound(row, column)", "font-weight: bold;");
+console.log("🔁 To reset the game at any time, type: %cGameController.resetGame()", "font-weight: bold;");
